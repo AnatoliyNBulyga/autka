@@ -1,0 +1,273 @@
+// Styles for dialog window
+
+.popup-form-window_change-floor
+	position: relative
+	max-width: 970px
+	min-width: 320px
+	margin: 0px auto
+	background-color: #FFF
+	box-shadow: 0px 7px 30px 0px rgba(0,0,0, .25)
+	.mfp-close
+		right: -5px
+	.main-form-wrap
+		margin: 40px auto
+		color: $text
+		input
+			border-color: $text
+	.main-form
+		background-color: #FFF
+		::-webkit-input-placeholder
+			color: $text
+		:-moz-placeholder
+			color: $text
+		:-ms-input-placeholder
+			color: $text
+	.main-form__heading
+		font-family: "Ubuntu-M",sans-serif
+		font-size: 20px
+		color: $placeholder
+		text-transform: uppercase
+
+.floor-wrap
+	padding: 20px 20px 140px
+
+.floor_left
+	display: inline-block
+	width: 12%
+
+.change_floor
+	position: absolute
+	top: 50%
+	left: 4%
+	transform: translateY(-50%)
+	li
+		display: block
+		a
+			font-family: "Ubuntu-R",sans-serif
+			font-size: 17px
+			color: #414141
+			display: inline-block
+			line-height: 45px
+			text-decoration: none
+			opacity: .8
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				bottom: 6px
+				left: 0
+				background-color: $accent
+				height: 1px
+				width: 100%
+				opacity: 0
+			&:hover
+				opacity: 1
+				&:after
+					opacity: 1
+			&:focus
+				color: #414141
+			&.active
+				opacity: 1
+				&:after
+					opacity: 1		
+
+
+.floor_right
+	display: inline-block
+	width: 87%
+	text-align: center
+		
+
+.popup-form-window 
+	background-color: transparent
+	text-align: left
+	margin: 0px auto  
+	position: relative
+	max-width: 455px
+	border: none
+	min-width: 320px
+	.popup_form-wrap
+		box-shadow: 0px 7px 30px 0px rgba(0,0,0, .25)
+	.btn-callback
+		display: block
+		text-align: center
+		width: 100%
+		font-family: "Ubuntu-B",sans-serif
+		line-height: 50px
+		border-radius: 50px
+	.popup_form	
+		input
+			border-bottom: 1px solid rgba($placeholder, .2)
+	textarea
+		width: 290px
+		height: 150px
+		text-indent: 20px
+		margin-bottom: 30px
+		resize: none
+		border: 1px solid rgba($placeholder, .2)
+		&:focus
+			outline: none	
+
+.popup-succes-wrap
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background-color: #FFF
+	z-index: 5
+	text-align: center
+	padding-top: 20px
+	font-family: "Ubuntu-R",sans-serif
+	color: $placeholder
+	p
+		font-size: 16px
+		line-height: 1.2
+
+	img
+		width: 100px
+		height: auto
+		display: inline-block
+		margin-bottom: 50px
+		
+.popup-succes__heading
+	display: block
+	font-size: 22px
+	margin-bottom: 30px
+	text-transform: uppercase
+	line-height: 1.3
+
+.main-head
+	.popup-succes-wrap
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		min-width: 280px
+		height: 350px
+
+// Fade-zoom animation for first dialog
+
+// start state
+
+.my-mfp-zoom-in
+	.zoom-anim-dialog
+		opacity: 0
+		-webkit-transition: all 0.2s ease-in-out
+		-moz-transition: all 0.2s ease-in-out
+		-o-transition: all 0.2s ease-in-out
+		transition: all 0.2s ease-in-out
+		-webkit-transform: scale(0.8)
+		-moz-transform: scale(0.8)
+		-ms-transform: scale(0.8)
+		-o-transform: scale(0.8)
+		transform: scale(0.8)
+	&.mfp-ready .zoom-anim-dialog
+		opacity: 1
+		-webkit-transform: scale(1)
+		-moz-transform: scale(1)
+		-ms-transform: scale(1)
+		-o-transform: scale(1)
+		transform: scale(1)
+	&.mfp-removing .zoom-anim-dialog
+		-webkit-transform: scale(0.8)
+		-moz-transform: scale(0.8)
+		-ms-transform: scale(0.8)
+		-o-transform: scale(0.8)
+		transform: scale(0.8)
+		opacity: 0
+	&.mfp-bg
+		opacity: 0
+		-webkit-transition: opacity 0.3s ease-out
+		-moz-transition: opacity 0.3s ease-out
+		-o-transition: opacity 0.3s ease-out
+		transition: opacity 0.3s ease-out
+	&.mfp-ready.mfp-bg
+		opacity: 0.93
+	&.mfp-removing.mfp-bg
+		opacity: 0
+
+// animate in
+
+// animate out
+
+// Dark overlay, start state
+
+// animate in
+
+// animate out
+
+// Fade-move animation for second dialog
+
+// at start
+
+.my-mfp-slide-bottom
+	.zoom-anim-dialog
+		opacity: 0
+		-webkit-transition: all 0.2s ease-out
+		-moz-transition: all 0.2s ease-out
+		-o-transition: all 0.2s ease-out
+		transition: all 0.2s ease-out
+		-webkit-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+		-moz-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+		-ms-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+		-o-transform: translateY(-20px) perspective(600px) rotateX(10deg)
+		transform: translateY(-20px) perspective(600px) rotateX(10deg)
+	&.mfp-ready .zoom-anim-dialog
+		opacity: 1
+		-webkit-transform: translateY(0) perspective(600px) rotateX(0)
+		-moz-transform: translateY(0) perspective(600px) rotateX(0)
+		-ms-transform: translateY(0) perspective(600px) rotateX(0)
+		-o-transform: translateY(0) perspective(600px) rotateX(0)
+		transform: translateY(0) perspective(600px) rotateX(0)
+	&.mfp-removing .zoom-anim-dialog
+		opacity: 0
+		-webkit-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+		-moz-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+		-ms-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+		-o-transform: translateY(-10px) perspective(600px) rotateX(10deg)
+		transform: translateY(-10px) perspective(600px) rotateX(10deg)
+	&.mfp-bg
+		opacity: 0
+		-webkit-transition: opacity 0.3s ease-out
+		-moz-transition: opacity 0.3s ease-out
+		-o-transition: opacity 0.3s ease-out
+		transition: opacity 0.3s ease-out
+	&.mfp-ready.mfp-bg
+		background-color: #fff
+		opacity: 0.95
+	&.mfp-removing.mfp-bg
+		opacity: 0
+
+// animate in
+
+// animate out
+
+// Dark overlay, start state
+
+// animate in
+
+// animate out
+
+//Custom styles .mfp-close
+
+.mfp-close
+	font-size: 36px
+	position: absolute
+	top: -7px
+	right: 35px
+	width: 50px
+	height: 50px
+	display: inline-block
+	&:active
+		top: -7px
+
+.mfp-close-btn-in .mfp-close
+	color: #000
+	opacity: 1
+	z-index: 2000
+	
+.mfp-iframe-holder .mfp-close, 
+.mfp-image-holder .mfp-close
+	right: -5px
+	top: 28px
+ 

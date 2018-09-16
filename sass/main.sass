@@ -1,0 +1,652 @@
+@import "bourbon"
+@import "vars.sass"
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+@import "app/libs/Magnific-Popup/magnific-popup.sass"
+@import "app/libs/owl.carousel/assets/owl.carousel.sass"
+@import "app/libs/css-hamburgers/hamburgers"
+@import "app/libs/bxslider/jquery.bxslider"
+@import "app/libs/fotorama/fotorama"
+@import "magnific-custom"
+
+.fotorama__thumb-border
+	border-color: $accent
+
+.fotorama__arr
+	background: url(../img/icons/slider_next.png) 0 0 no-repeat
+	width: 36px
+	height: 36px
+
+.fotorama__arr--prev
+	background: url(../img/icons/slider_prev.png) 0 0 no-repeat
+
+// Magnific Popup
+
+.home-gallery-wrap > a
+	display: none
+	&:first-child
+		display: block
+							
+// Magnific Popup Costomize
+.mfp-ready .mfp-figure
+	opacity: 0
+.mfp-zoom-in
+	.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+		opacity: 0
+		transition: all 0.3s ease-out
+		transform: scale(0.95)
+	&.mfp-bg, .mfp-preloader
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-image-loaded .mfp-figure
+		opacity: 1
+		transform: scale(1)
+	&.mfp-ready
+		.mfp-iframe-holder .mfp-iframe-scaler
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg, .mfp-preloader
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+			transform: scale(0.95)
+			opacity: 0
+		&.mfp-bg, .mfp-preloader
+			opacity: 0
+
+.mfp-iframe-scaler
+	overflow: visible
+.mfp-zoom-out-cur
+	cursor: auto
+	.mfp-image-holder .mfp-close
+		cursor: pointer
+.mfp-preloader
+	width: 30px!important
+	height: 30px!important
+	background-color: $accent
+	opacity: 1
+	margin: 0 auto
+	animation: rotateplane 1.2s infinite ease-in-out
+@-webkit-keyframes rotateplane
+	0%
+		-webkit-transform: perspective(120px)
+	50%
+		-webkit-transform: perspective(120px) rotateY(180deg)
+	100%
+		-webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+@keyframes rotateplane
+	0%
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+	50%
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+	100%
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+
+// Magnific Popup Costomize end							
+// Magnific Popup End 
+
+// begin prevelegies-section
+
+.prevelegies
+	background-size: cover
+	padding: 60px 0
+	color: #fff
+	h2
+		text-align: center
+		color: #fff
+		margin-bottom: 50px
+		&:after,
+		&:before
+			background-color: #fff	
+
+
+.prevelegies-item
+	text-align: center
+	display: inline-block
+	border-bottom: 5px solid $accent
+	width: 30%
+	padding: 20px 12px
+	margin:
+		right: 30px
+		bottom: 50px
+	&:nth-child(3),
+	&:nth-child(6)
+		margin-right: 0			
+
+.prevelegies-item__icon
+	display: inline-block
+	margin:
+		right: 20px
+		bottom: -6px
+
+.icon-1		
+	width: 22px
+	height: 46px
+	background: url(../img/icons/prevelegies/prevelegies_1.png) 0 0 no-repeat
+
+.icon-2
+	width: 37px
+	height: 29px
+	background: url(../img/icons/prevelegies/prevelegies_2.png) 0 0 no-repeat
+
+.icon-3
+	width: 40px
+	height: 40px
+	background: url(../img/icons/prevelegies/prevelegies_3.png) 0 0 no-repeat
+
+.icon-4
+	width: 40px
+	height: 37px
+	background: url(../img/icons/prevelegies/prevelegies_4.png) 0 0 no-repeat
+
+.icon-5
+	width: 33px
+	height: 33px
+	background: url(../img/icons/prevelegies/prevelegies_5.png) 0 0 no-repeat
+
+.icon-6
+	width: 40px
+	height: 36px
+	background: url(../img/icons/prevelegies/prevelegies_6.png) 0 0 no-repeat				
+
+.prevelegies-item__heading
+	display: inline-block
+	text-align: center
+	font-family: $default
+	font-size: 18px
+									
+// end prevelegies-section
+// begin gallery-section
+
+.gallery-section
+	padding: 60px 0
+	h2
+		text-align: center
+		margin-bottom: 30px
+
+.main-gallery
+	position: relative
+
+.main_slider-nav
+	position: absolute
+	top: 50%
+	margin-top: -36px
+	width: 100%
+	z-index: 10
+
+.main_slider-next
+	display: block
+	float: right
+	width: 36px
+	height: 36px
+	margin-right: 16px
+	.bx-next
+		display: block
+		width: 36px
+		height: 36px
+		background: url(../img/icons/slider_next.png) 0 0 no-repeat
+
+.main_slider-prev
+	display: block
+	float: left
+	width: 36px
+	height: 36px
+	margin-left: 16px
+	.bx-prev
+		display: block
+		width: 36px
+		height: 36px
+		background: url(../img/icons/slider_prev.png) 0 0 no-repeat				
+
+.bx-wrapper
+	margin: 0 auto 30px 
+	.bx-viewport
+		box-shadow: none
+		border: none
+		left: 0
+		background: none
+
+.main-gallery__pager
+	a
+		display: inline-block
+		vertical-align: top
+		position: relative
+		width: 170px
+		height: auto
+		margin-right: 20px
+		&:last-child
+			margin-right: 0
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(0,0,0, 0)
+		&.active
+			&:before
+				background-color: rgba(0,0,0, .3)				
+
+	
+// end gallery-section
+
+// begin change-apartment-section
+.change-apartment
+	padding: 60px 0 90px
+	background-image: url(../img/Change-apartment_bg.jpg)
+	background-position: center
+	background-size: cover
+	box-shadow: inset 0px 10px 40px 10px rgba(0,0,0, .2)
+	h2
+		text-align: center
+		margin-bottom: 40px
+		color: #fff
+		&:after,
+		&:before
+			background-color: #fff
+	h3
+		margin-bottom: 15px
+		text-align: center
+						
+.change-aparment-left_heading
+	display: inline-block
+	font-family: $default
+	font-size: 18px
+	color: $placeholder
+	margin: 15px 0 70px 65px 
+
+.change-apartment-img_wrap
+	display: block
+	position: relative
+	img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		max-width: 470px
+		height: auto
+		&:last-child
+			opacity: 0
+			+mt(.5s)
+		&:hover
+			&:last-child
+				opacity: 1		
+
+.popup_form-wrap
+	position: relative
+	margin-left: 40px
+	max-width: 370px
+	padding: 50px 40px 40px
+	background-color: #fff
+	border-radius: 5px
+	color: $text
+
+.change-apartment
+	.popup_form-wrap
+		margin-top: 90px
+
+.form-logo
+	position: absolute
+	top: -60px
+	left: 50%
+	transform: translateX(-50%)
+	img
+		max-width: 100px
+		height: auto
+
+.popup_form
+	text-align: center
+	input
+		display: block
+		width: 100%
+		border: none
+		border-bottom: 1px solid $placeholder
+		background-color: transparent
+		text-indent: 20px
+		line-height: 40px
+		margin-bottom: 15px
+		&:focus
+			outline: none
+	.btn-accent
+		display: block
+		margin-top: 40px
+		width: 100%
+		box-shadow: 0 3px 5px 0 rgba(0,0,0, .15)
+		&:hover
+			box-shadow: none		
+	::-webkit-input-placeholder
+		font-family: "Ubuntu-L", sans-serif
+		font-size: 17px
+	:-moz-placeholder
+		font-family: "Ubuntu-L", sans-serif
+		font-size: 17px
+	:-ms-input-placeholder
+		font-family: "Ubuntu-L", sans-serif
+		font-size: 17px
+
+.popup_form-heading
+	display: block
+	font-family: $default
+	font-size: 20px
+	text-transform: uppercase
+	line-height: 1.3
+
+.popup_form-descr
+	display: block
+	font-family: "Ubuntu-R",sans-serif
+	font-size: 14px
+	opacity: .7
+	line-height: 1.2
+	margin-bottom: 10px	
+
+.floor_right_small
+	display: none	
+
+.floor_right_small-block-wrap
+	display: block
+	text-align: center
+	margin: 20px 0	
+
+.floor_right_small-block
+	display: inline-block
+	min-width: 320px
+	font-size: 20px
+	table
+		width: 100%
+	tr
+		border-bottom: 1px solid $accent
+		line-height: 40px	
+	td
+		width: 30%
+		text-align: center
+
+
+
+.number_floor
+	font-family: $default
+	color: $headingColor
+
+.squer_floor
+	font-family: "Ubuntu-R",sans-serif
+	color: $headingColor
+
+.price_floor
+	font-family: "Ubuntu-B", sans-serif
+	color: $text	
+
+
+	
+// end change-apartment-section
+
+// begin about-house
+
+.about-house
+	padding: 60px 0
+	h2
+		text-align: center
+		margin-bottom: 40px
+
+.about-house_left
+	li
+		display: block
+		position: relative
+		margin-bottom: 30px
+		&:last-child
+			margin-bottom: 0
+	span
+		position: absolute
+		top: 5px	
+	p
+		margin-left: 30px
+		font-family: "Ubuntu-L",sans-serif
+		font-size: 18px
+		color: $placeholder
+			
+.about-house_icon
+	display: inline-block
+	width: 18px
+	height: 18px
+	background: url(../img/icons/about-check.png) 0 0 no-repeat
+
+.about-house_right
+	position: relative
+	height: 480px
+	img
+		width: 355px
+		height: auto
+		box-shadow: 3px 5px 20px 0px rgba(0,0,0, .3)
+	li
+		display: block
+		position: absolute
+		&:first-child
+			top: 0
+			right: 0
+			z-index: 1
+		&:nth-child(2)
+			bottom: 30px
+			right: 0
+			z-index: 3
+		&:nth-child(3)
+			top: 40%
+			left: 2%
+			transform: translateY(-50%)
+			z-index: 2
+		&:last-child
+			bottom: 0
+			left: 2%
+			z-index: 2
+			img
+				width: 290px					
+	
+// end about-house
+
+// begin movie-section
+
+.movie-section
+	background: url(../img/movie_bg.jpg) 0 0 no-repeat
+	background-size: cover
+	text-align: center
+	padding: 60px 0
+	h2
+		margin-bottom: 40px
+
+.movie-block
+	display: inline-block
+	max-width: 854px
+	width: 100%
+	height: 480px
+	box-shadow: 3px 5px 20px 0px rgba(0,0,0, .3) 		
+
+// end movie-section
+
+// begin FAQ
+
+.FAQ
+	padding: 60px 0
+	h2
+		margin-bottom: 40px
+
+.FAQ-descr_icon
+	display: inline-block
+	margin:
+		bottom: -4px
+		right: 12px
+	width: 20px
+	height: 20px
+	background: url(../img/icons/question.png) 0 0 no-repeat
+
+.FAQ-descr_heading
+	display: inline-block
+	font-family: "Ubuntu-L",sans-serif
+	font-size: 18px
+	margin-bottom: 30px
+
+.FAQ-item
+	border-top: 5px solid $accent
+	padding: 30px 0
+	p
+		font-family: "Ubuntu-L",sans-serif
+		font-size: 16px	
+
+.FAQ-item_heading
+	display: block
+	font-family: "Ubuntu-B",sans-serif
+	font-size: 19px
+	margin-bottom: 20px			
+	
+// end FAQ
+
+// begin documentation
+
+.documentation
+	padding: 60px 0
+	h2
+		margin-bottom: 40px
+
+.documentaition-item
+	position: relative
+	box-shadow: 3px 5px 20px 0px rgba(0,0,0, .3)
+	&:hover
+		.overlay
+			background-color: rgba(25,25,25, .3)
+		.documentaition-item-hover
+			opacity: 1	
+
+.overlay
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: rgba(25,25,25, 0)
+	+mt(.5s)
+
+.documentaition-item-hover
+	display: inline-block
+	width: 30px
+	height: 31px
+	background: url(../img/icons/hover.png) 0 0 no-repeat
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+	opacity: 0
+	+mt(.5s)	
+
+// end documentation
+
+// begin contacts-section
+
+.contacts-section
+	position: relative
+	padding: 60px 0
+	h2
+		margin-bottom: 40px
+	.popup_form-wrap
+		max-width: 100%
+		margin: 0
+		box-shadow: 0px 7px 30px 0px rgba(0,0,0, .25)
+		padding: 40px
+		background-color: rgba(255,255,255, .6)
+	.form-logo
+		top: -15px
+		img
+			width: 40px		
+
+.contacts-left
+	padding: 40px 35px
+	background-color: rgba(255,255,255, .6)
+	border-radius: 5px
+	box-shadow: 0px 7px 30px 0px rgba(0,0,0, .25)
+	font-family: "Ubuntu-L",sans-serif
+	font-size: 17px
+	div
+		margin-bottom: 18px
+	.btn-callback
+		width: 100%
+		padding: 0
+		text-align: center
+		line-height: 50px
+		border-radius: 50px
+		margin-top: 10px
+
+.contacts-left_heading
+	display: block
+	border-bottom: 2px solid $accent
+	margin-bottom: 15px
+	font-family: "Ubuntu-R",sans-serif
+	font-size: 25px
+	color: $placeholder
+	line-height: 40px
+
+.adress-block_heading,
+.adress-sale-department_heading,
+.adress-block_value,
+.adress-sale-department_value
+	display: block
+
+.my_map
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0	
+
+// end contacts-section
+
+// begin main-footer
+
+.main-footer
+	background-color: #232323
+	padding-bottom: 10px
+	.main-logo
+		img
+			max-width: 78px
+	.phone-number__icon
+		background: url(../img/icons/phone-white.png) 0 0 no-repeat
+	.callback-block
+		margin-top: 36px
+		a
+			color: #fff
+			&:hover
+				color: $accent
+	.header-mnu
+		margin-top: 38px
+		a
+			color: #fff
+			font-family: "Ubuntu-L",sans-serif
+			font-size: 15px
+			&:hover
+				color: $accent
+
+.copyright-block
+	display: inline-block
+	font-family: "Ubuntu-L",sans-serif
+	font-size: 12px
+	color: rgba(248,248,248, .5)
+	margin-top: 40px
+
+// end main-footer
+
+.main-head,
+.popup-form-window_change-floor
+	#имя-error
+		position: absolute
+		left: 12%
+		top: 50%
+		color: red
+	#телефон-error
+		position: absolute
+		left: 45%	
+		top: 50%
+		color: red
+
+.footer-info
+	font-size: 14px
+	color: rgba(255,255,255, 0.5)
+	text-align: center
+	margin: 10px 200px				
+
+//ALWAYS END
+@import "media"

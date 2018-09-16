@@ -1,0 +1,5 @@
+User-agent: *
+
+
+Host: autka.ru
+Sitemap: http://autka.ru/sitemap.xml
